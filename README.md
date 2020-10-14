@@ -30,12 +30,6 @@ This application uses an Express.js back end to save and retrieve note data from
 
 [<p align="center"><img src="lib/Preview.png">](https://jsNote-mbrassey.herokuapp.com/)
 
-[<p align="center"><img src="lib/Preview1.png">](https://jsNote-mbrassey.herokuapp.com/)
-
-[<p align="center"><img src="lib/Preview2.png">](https://jsNote-mbrassey.herokuapp.com/)
-
-[<p align="center"><img src="lib/Preview3.png">](https://jsNote-mbrassey.herokuapp.com/)
-
 #### Questions
 
 Contact me at [matt@brassey.io](mailto:matt@brassey.io) with any questions or comments.
