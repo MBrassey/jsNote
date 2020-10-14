@@ -1,11 +1,13 @@
 const path = require("path");
 const router = require("express").Router();
-const db = require("../db/db.json");
 const fs = require("fs");
+let db = "./db/db.json";
+let noteId = "";
+let maxId = "6";
 
 // Configure Middleware
 router.get("/api/notes", (req, res) => {
-  fs.readFile("./db/db.json", "utf8", (err, data) => {
+  fs.readFile(db, "utf8", (err, data) => {
     if (err) {
       alert("error Get Notes", err);
       return 0;
@@ -18,11 +20,12 @@ router.get("/api/notes", (req, res) => {
 });
 
 router.post("/api/notes", (req, res) => {
-  if (!noteId) noteId = getMaxId();
+  if (!noteId) noteId = maxId;
   noteId += 1;
   req.body.id = noteId; // add id
   fs.readFile(db, "utf8", (err, data) => {
     if (err) {
+      console.log(err);
       console.log("Error in posting note");
       return false;
     } else {
