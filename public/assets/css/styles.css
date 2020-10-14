@@ -120,4 +120,16 @@ body {
 
 .center {
   background-color: var(--Zinc);
+  color: var(--Night);
+  font-weight: bolder;
+}
+
+.btn-primary {
+  background-color: var(--Stone);
+  color: var(--Absinthe);
+}
+
+.btn-primary:hover {
+  background-color: var(--Night);
+  color: var(--Absinthe);
 }
