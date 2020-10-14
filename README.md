@@ -9,7 +9,8 @@ This application uses an Express.js back end to save and retrieve note data from
 - [x] [Create webserver & routes](https://github.com/MBrassey/jsNote/issues/1)
 - [x] [Accept user data](https://github.com/MBrassey/jsNote/issues/2)
 - [x] [Retrieve data from json](https://github.com/MBrassey/jsNote/issues/3)
-- [x] [Re-factor & test](https://github.com/MBrassey/jsNote/issues/4)
+- [x] [Re-factor & add delete function](https://github.com/MBrassey/jsNote/issues/4)
+- [x] [Test & stylize](https://github.com/MBrassey/jsNote/issues/5)
 
 #### Requirements
 

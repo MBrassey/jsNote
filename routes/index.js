@@ -38,18 +38,44 @@ router.post("/api/notes", (req, res) => {
   });
 });
 
+// Return List of Saved Notes
 router.get("/api/notes", (req, res) => {
   fs.readFile(db, "utf8", (err, data) => {
     if (err) {
       alert("error Get Notes", err);
       return 0;
     }
-    // response parsed and returned
     return res.json(JSON.parse(data));
-    //return res;
   });
 });
 
+// Delete Saved Note by Id
+router.delete("/api/notes/:id", (req, res) => {
+  let id = req.params.id;
+  fs.readFile("./db/db.json", "utf8", (err, data) => {
+    if (err) {
+      alert("Error could not READ", err);
+      return 0;
+    } else {
+      data = JSON.parse(data);
+      data.forEach((element, index, data) => {
+        if (element.id == id) {
+          data.splice(index, 1);
+          fs.writeFile("./db/db.json", JSON.stringify(data), (err) => {
+            if (err) {
+              alert("error on Delete", err);
+              return 0;
+            }
+            res.json(data);
+          });
+          return 0;
+        }
+      });
+    }
+  });
+});
+
+// HTML Routes
 router.get("/notes", (req, res) => {
   res.sendFile(path.join(__dirname, "../public/notes.html"));
 });
