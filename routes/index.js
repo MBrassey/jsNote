@@ -3,7 +3,13 @@ const router = require("express").Router();
 const fs = require("fs");
 let db = "./db/db.json";
 let noteId = "";
-let maxId = "6";
+
+// Determine Amount of Saved Notes to Display
+const jsonLength = () => {
+  let data = fs.readFileSync(db, "utf8");
+  data = JSON.parse(data);
+  return data.length;
+};
 
 // Configure Middleware
 router.get("/api/notes", (req, res) => {
@@ -20,9 +26,10 @@ router.get("/api/notes", (req, res) => {
 });
 
 router.post("/api/notes", (req, res) => {
-  if (!noteId) noteId = maxId;
+  if (!noteId) noteId = jsonLength();
+  var noteId = Number(noteId);
   noteId += 1;
-  req.body.id = noteId; // add id
+  req.body.id = noteId;
   fs.readFile(db, "utf8", (err, data) => {
     if (err) {
       console.log(err);
