@@ -1,13 +1,13 @@
 {
-  "name": "note-taker",
+  "name": "jsNote",
   "version": "1.0.0",
-  "description": "",
+  "description": "This application uses an Express.js back end to save and retrieve note data from a JSON file.",
   "main": "server.js",
   "scripts": {
     "test": "jest -verbose"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Matt Brassey",
+  "license": "CC0-1.0",
   "dependencies": {
     "express": "^4.16.4"
   },

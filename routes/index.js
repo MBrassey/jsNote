@@ -2,29 +2,15 @@ const path = require("path");
 const router = require("express").Router();
 const fs = require("fs");
 let db = "./db/db.json";
-let noteId = "";
 
-// Determine Amount of Saved Notes to Display
+// Determine Number of Saved Notes
 const jsonLength = () => {
   let data = fs.readFileSync(db, "utf8");
   data = JSON.parse(data);
   return data.length;
 };
 
-// Configure Middleware
-router.get("/api/notes", (req, res) => {
-  fs.readFile(db, "utf8", (err, data) => {
-    if (err) {
-      alert("error Get Notes", err);
-      return 0;
-    }
-    console.log("Data", data);
-    // response parsed and returned
-    res.json(JSON.parse(data));
-    return res;
-  });
-});
-
+// Save New Note
 router.post("/api/notes", (req, res) => {
   if (!noteId) noteId = jsonLength();
   var noteId = Number(noteId);
@@ -52,7 +38,18 @@ router.post("/api/notes", (req, res) => {
   });
 });
 
-// Configure Routes
+router.get("/api/notes", (req, res) => {
+  fs.readFile(db, "utf8", (err, data) => {
+    if (err) {
+      alert("error Get Notes", err);
+      return 0;
+    }
+    // response parsed and returned
+    return res.json(JSON.parse(data));
+    //return res;
+  });
+});
+
 router.get("/notes", (req, res) => {
   res.sendFile(path.join(__dirname, "../public/notes.html"));
 });
