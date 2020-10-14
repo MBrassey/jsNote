@@ -1,4 +1,27 @@
-html, body {
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  --Azure: #2994cb;
+  --Absinthe: #a3de9e;
+  --Sakura: #de9ea1;
+  --Sky: #394b59;
+  --Anthracite: #2a2a2a;
+  --Jet: #141414;
+  --Night: #181818;
+  --Stone: #6c757d;
+  --Zinc: #cfd2d0;
+  --Absinthe-alpha: rgba(163, 222, 158, 0.8);
+  --Shadow-Alpha: rgba(0, 0, 0, 0.5);
+}
+
+html,
+body {
+  font-family: "Play", sans-serif;
+  background-color: var(--Stone);
   height: 100%;
   margin: 0;
   padding: 0;
@@ -15,8 +38,10 @@ html, body {
   cursor: pointer;
 }
 
-.note-textarea, .note-title {
-  color: #000000;
+.note-textarea,
+.note-title {
+  color: var(--Absinthe);
+  background-color: var(--Stone);
   width: 100%;
   outline: none;
   border: none;
@@ -34,11 +59,15 @@ html, body {
   font-size: 3rem;
 }
 
-.note-title:read-only, .note-textarea:read-only {
-  color: #757575;
+.note-title:read-only,
+.note-textarea:read-only {
+  color: var(--Absinthe);
 }
 
 .list-container .card {
+  background-color: var(--Stone);
+  color: var(--Night);
+  font-weight: bolder;
   height: calc(100vh - 70px);
   border-bottom: none;
   border-bottom-right-radius: 0;
@@ -63,8 +92,32 @@ html, body {
 }
 
 .list-container .list-group-item {
+  background-color: var(--Stone);
   border-left: none;
   border-right: none;
   padding: 20px;
   cursor: pointer;
+}
+
+.navbar {
+  background-color: var(--Night);
+}
+
+.azure {
+  font-size: 26px;
+  font-weight: bolder;
+  color: var(--Azure);
+}
+
+.azure:hover {
+  color: var(--Azure);
+  text-decoration: none;
+}
+
+.sakura {
+  color: var(--Sakura);
+}
+
+.center {
+  background-color: var(--Zinc);
 }
