@@ -4,7 +4,7 @@
   "description": "This application uses an Express.js back end to save and retrieve note data from a JSON file.",
   "main": "server.js",
   "scripts": {
-    "test": "jest -verbose"
+    "test": "jest --verbose"
   },
   "author": "Matt Brassey",
   "license": "CC0-1.0",
